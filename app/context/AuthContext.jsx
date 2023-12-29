@@ -15,9 +15,6 @@ export const AuthProvider = ({ children }) => {
 		try {
 			setIsLoading(true);
 			await pb.collection('users').authWithPassword(email, password);
-			console.log(pb.authStore.isValid);
-			console.log(pb.authStore.token);
-			console.log(pb.authStore.model.id);
 			setLoggedIn(true);
 		} catch (err) {
 			console.log(err);

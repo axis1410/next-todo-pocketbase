@@ -4,8 +4,9 @@ import Register from '../components/Register';
 
 const Auth = () => {
 	return (
-		<main className='flex flex-row justify-around'>
+		<main className='flex flex-col md:flex-row justify-around'>
 			<Login />
+
 			<Register />
 		</main>
 	);

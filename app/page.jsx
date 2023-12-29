@@ -1,7 +1,9 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useContext } from 'react';
-import { AuthContext, AuthProvider } from './context/AuthContext';
 import Auth from './auth/page';
+import Dashboard from './components/Dashboard';
+import { AuthContext, AuthProvider } from './context/AuthContext';
 
 const Home = () => {
 	return (
@@ -14,7 +16,8 @@ const Home = () => {
 export default Home;
 
 const HomeDisplay = () => {
+	const router = useRouter();
 	const { loggedIn } = useContext(AuthContext);
 
-	return <>{loggedIn ? <div>Logged in</div> : <Auth />}</>;
+	return <>{loggedIn ? <Dashboard /> : <Auth />}</>;
 };
